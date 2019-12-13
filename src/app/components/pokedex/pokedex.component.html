@@ -13,7 +13,7 @@
             <div class="row body">
                 <div class="col-12">
                     <form>
-                        <input type="text" placeholder={{placeholderInput}} class="form-control search-pokemon" maxlength="30">
+                        <input type="text" placeholder={{placeholderInput}} class="form-control search-pokemon" maxlength="20">
                         <hr class="line">
                         <input type="submit" name={{bottonSearch}} id="" class="btn botton-search" value={{bottonSearch}} (click)="getPokemonName()">
                     </form>
@@ -26,9 +26,19 @@
             </div>
         </div>
         <div class="col-6 data-pokemon">
+           <div class="container">
             <div class="row">
-                <div class="col-12 sprite">
-
+                <div class="col-12" *ngIf="activatePokedex">
+                   <div class="row">
+                       <div class="col-3 sprite">
+                            <img src="/assets/img/sprites/{{pokedex[0].name}}.gif" alt="{{pokedex[0].name}}" title="{{pokedex[0].name}}" class="image-sprite">
+                       </div>
+                       <div class="col-9 name">
+                           <legend class="number-background">#{{pokedex[0].number}}</legend>
+                           <span class="pokemon-numbre">#{{pokedex[0].number}}</span>
+                           <h2 class="pokemon-name">{{pokedex[0].name}}</h2>
+                       </div>
+                   </div>
                 </div>
             </div>
             <div class="row">
@@ -41,6 +51,7 @@
 
                 </div>
             </div>
+           </div>
         </div>
     </div>
 </div>
