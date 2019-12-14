@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import {  PokedexService } from '../../services/pokedex';
-import { Pokedex } from '../../models/pokedex';
+import { Component, OnInit }  from '@angular/core';
+import {  PokedexService }    from '../../services/pokedex';
+import { Pokedex }            from '../../models/pokedex';
 
 @Component({
-  selector: 'app-pokedex',
-  templateUrl: './pokedex.component.html',
-  styleUrls: ['./pokedex.component.less'],
-  providers :[PokedexService]
+  selector    : 'app-pokedex',
+  templateUrl : './pokedex.component.html',
+  styleUrls   : ['./pokedex.component.less'],
+  providers   :[PokedexService]
 })
 export class PokedexComponent implements OnInit {
   public title            : string;
@@ -31,7 +31,8 @@ export class PokedexComponent implements OnInit {
 
   getPokemonName(){
     this.activatePokedex = true;
-    this.pokemon = document.getElementsByClassName('search-pokemon')[0].value;
+    //this.pokemon = document.getElementsByClassName('search-pokemon')[0].value;
+    this.pokemon = "ditto";
     this._pokedexService.getPokemon(this.pokemon).subscribe(
       res =>{
         this.pokedex = [ new Pokedex (res.name ,res.order,res.types ,res.stats)];

@@ -1,21 +1,19 @@
 <div class="pokedex">
     <div class="row">
-        <div class="col-6 search">
+        <div class=" col-12 col-md-6 search">
             <div class="row header">
-                <div class="col-8 info">
+                <div class="col-6 col-md-8 info">
                     <h1 class="title">{{title}}</h1>
                     <p class="subtitle">{{subtitle}}</p>
                 </div>
-                <div class="col-4">
-                    <div class="image-input"></div>
-                </div>
+                <div class="col-6 col-md-4 image-input"></div>
             </div>
             <div class="row body">
                 <div class="col-12">
                     <form>
-                        <input type="text" placeholder={{placeholderInput}} class="form-control search-pokemon" maxlength="20">
+                        <input type="text" placeholder={{placeholderInput}} class="form-control search-pokemon" maxlength="15">
                         <hr class="line">
-                        <input type="submit" name={{bottonSearch}} id="" class="btn botton-search" value={{bottonSearch}} (click)="getPokemonName()">
+                        <input type="submit" name={{bottonSearch}} id="" class="btn botton-search btn-medium" value={{bottonSearch}} (click)="getPokemonName()">
                     </form>
                 </div>
             </div>
@@ -25,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-6 data-pokemon">
+        <div class=" col-12 col-md-6 data-pokemon">
            <div class="container">
             <div class="row">
                 <div class="col-12" *ngIf="activatePokedex">

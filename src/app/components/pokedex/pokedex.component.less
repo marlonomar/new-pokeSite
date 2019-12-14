@@ -1,20 +1,21 @@
 @fire-color     : #FF5050;
-@white-color    :#fff;
+@white-color    : #fff;
 @subtitle       : #c6c6c6;
-@fire-hover     :rgba(255, 80, 80, 0.808);
+@fire-hover     : rgba(255, 80, 80, 0.808);
+@text-opacity-medium : #0000006b;
 
 .pokedex{
     width       : 100%;
-    height      :100%;
+    height      : 100%;
     background  : @fire-color;
-    padding     :30px;
+    padding     : 30px;
 
     .search{
         width           : 100%;
-        height          :100%;
-        background      :@white-color;
-        padding         :40px;
-        border-radius   :15px;
+        height          : 100%;
+        background      : @white-color;
+        padding         : 40px;
+        border-radius   : 15px;
 
         .header{
             
@@ -27,22 +28,29 @@
                 }
     
                 .subtitle{
-                   
                     color   : @subtitle;
+
+                    @media (max-width : 500px) {
+                        font-size   : 12px;
+                    }
                 }
             }
         
             .image-input{
                 background-image        : url("../../../assets/img/pikachu.png");
-                width                   : 300px;
-                height                  : 227px;
+                background-position     : center;
                 float                   : right;
                 background-size         : cover;
-                background-repeat       : repeat;
+                background-repeat       : no-repeat;
                 background-position-y   : 0px;
                 position                : relative;
                 top                     : 50px;
                 z-index                 : 9999;
+
+                @media (max-width : 905px) {
+                    background-size     : contain;
+                    background-position : bottom;
+                }
             
             }
         }
@@ -50,10 +58,18 @@
         .body{
 
             .search-pokemon{
-                border      :none;
+                border      : none;
                 background  : none;
                 height      : 50px;
                 font-size   : 30px;
+
+                @media (max-width : 500px){
+                    font-size   : 20px;
+                }
+
+                @media (max-width : 385px) {
+                    font-size   : 13px;
+                }
             }
 
             .line{
@@ -65,41 +81,42 @@
 
             .botton-search{
                 background      : @fire-color;
-                width           : 150px;
-                height          : 50px;
                 color           : @white-color;
-                font-size       : 17px;
-                font-weight     : 500;
-                cursor          : pointer;
-
+                
                 &:hover{
                     background  : @fire-hover;
+                }
+
+                @media (max-width : 400px){
+                    display : table;
+                    margin  : auto;
                 }
             }
         }
     }
 
     .data-pokemon{
-        padding: 30px;
+        padding : 30px;
 
         .sprite{
-            padding: 20px;
+            padding : 20px;
         
             .image-sprite{
-                height:100%;
-                margin: auto;
-                display: table;
+                height  : 100%;
+                margin  : auto;
+                display : table;
             }
 
         }
 
         .name{
             .number-background{
-                font-size: 178px;
-                position: absolute;
-                font-weight: 900;
-                color: #0000006b;
-                top: -60px;
+                font-size   : 178px;
+                position    : absolute;
+                font-weight : 900;
+                color       : @text-opacity-medium ;
+                top         : -116%;
+                left        : 27%;
             }
         }
     }
