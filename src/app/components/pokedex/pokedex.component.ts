@@ -36,7 +36,8 @@ export class PokedexComponent implements OnInit {
 
   getPokemonName(){
     this.activatePokedex = true;
-    this.pokemon = this.getnamepokemon();
+    this.pokemon = document.getElementsByClassName('search-pokemon')[0].value;
+    //this.pokemon = "ditto";
     this._pokedexService.getPokemon(this.pokemon).subscribe(
       res =>{
         this.pokedex = [ new Pokedex (res.name ,res.order,res.types ,res.stats)];

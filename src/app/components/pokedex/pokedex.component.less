@@ -2,7 +2,7 @@
 @white-color    : #fff;
 @subtitle       : #c6c6c6;
 @fire-hover     : rgba(255, 80, 80, 0.808);
-@text-opacity-medium : #0000006b;
+@text-opacity : #00000014;
 
 .pokedex{
     width       : 100%;
@@ -109,32 +109,34 @@
 
         }
 
-        .name{
+        .container-information {
+            height  : 150px;
 
-            .pokemon-name{
-                color           : white;
-                font-size       : 70px;
-                text-transform  : capitalize;
-                font-family     : unset;
+            .name{
+                .number-background{
+                    font-size   : 114px;
+                    position    : absolute;
+                    font-weight : 900;
+                    color       : @text-opacity;
+                    top         : -25px;
+                }
+
+                .pokemon-name{
+                    color           : @white-color;
+                    font-size       : 80px;
+                    text-transform  : capitalize;
+                    position        : absolute;
+                    top             : 45px;
+                }
+
+                .pokemon-number{
+                    position    : absolute;
+                    color       : @white-color;
+                    font-size   : 35px;
+                    font-family : unset;
+                }
             }
 
-            .pokemon-number{
-                color       : white;
-                font-size   : 25px;
-                font-weight : 500;
-                font-family : cursive;
-            }
-
-            .number-background{
-                color       : @text-opacity-medium ;
-                position    : absolute;
-                font-size   : 100px;
-                font-weight : bold;
-                font-family : cursive;
-                bottom      : 21px;
-                left        : 178px;
-              
-            }
         }
     }
 }
