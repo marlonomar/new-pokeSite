@@ -16,6 +16,7 @@ export class PokedexComponent implements OnInit {
   public pokedex          : Array<Pokedex>;
   public activatePokedex  : boolean;
   public pokemon          :string;
+  public types            :[any];
 
 
   constructor(
@@ -29,14 +30,18 @@ export class PokedexComponent implements OnInit {
     this.activatePokedex = false;
   }
 
+  getnamepokemon(){
+    return  document.getElementsByClassName('search-pokemon')[0].value;
+  }
+
   getPokemonName(){
     this.activatePokedex = true;
-    //this.pokemon = document.getElementsByClassName('search-pokemon')[0].value;
-    this.pokemon = "ditto";
+    this.pokemon = this.getnamepokemon();
     this._pokedexService.getPokemon(this.pokemon).subscribe(
       res =>{
         this.pokedex = [ new Pokedex (res.name ,res.order,res.types ,res.stats)];
-        console.log(this.pokedex)
+        //this.types = this.pokedex.stats;
+        console.log(this.pokedex[0].type);
       },
       req =>{
         console.log(req)
